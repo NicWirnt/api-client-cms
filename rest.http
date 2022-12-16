@@ -1,0 +1,28 @@
+#### USER API ####
+GET http://localhost:5000/api/v1/user
+
+
+### POST USER API ###
+POST http://localhost:5000/api/v1/user
+Content-Type: application/json
+
+{
+    "fName" : "Nico",
+    "lName" : "Wiranata",
+    "phone" : "0451519990",
+    "email" : "nicowiranata@gmail.com",
+    "password" : "nicowira"
+}
+
+### LOGIN USER API ###
+POST http://localhost:8000/api/v1/user/login
+Content-Type: application/json
+
+{
+    "email" : "nico@gmail.com",
+    "password" : "nicowira"
+}
+
+
+### PRODUCTS API ###
+GET http://localhost:5000/api/v1/products/6301ed40102b80ac7b3825d3
