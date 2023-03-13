@@ -26,3 +26,6 @@ Content-Type: application/json
 
 ### PRODUCTS API ###
 GET http://localhost:5000/api/v1/products/6301ed40102b80ac7b3825d3
+
+### CATEGORIES ROUTER ###
+GET http://localhost:5000/api/v1/categories/63a3cfd65fa9fdae9cd36214
