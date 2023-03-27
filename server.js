@@ -23,9 +23,11 @@ dbConnect();
 import categoryRouter from "./src/routers/categoriesRouter.js";
 import userRouter from "./src/routers/userRouter.js";
 import productRouter from "./src/routers/productsRouter.js";
+import stripeRouter from "./src/routers/stripeRouter.js";
 app.use("/api/v1/categories", categoryRouter);
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/products", productRouter);
+app.use("/api/v1/create-payment-intent", stripeRouter);
 
 app.get("/", (req, res) => {
   res.json({
