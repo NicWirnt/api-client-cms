@@ -40,6 +40,10 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    address: {
+      type: new Object(),
+      default: "",
+    },
   },
   {
     timestamps: true,

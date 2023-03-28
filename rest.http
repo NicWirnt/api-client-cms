@@ -10,8 +10,8 @@ Content-Type: application/json
     "fName" : "Nico",
     "lName" : "Wiranata",
     "phone" : "0451519990",
-    "email" : "nicowiranata@gmail.com",
-    "password" : "nicowira"
+    "email" : "nicowiranata3@gmail.com",
+    "password" : "aaa"
 }
 
 ### LOGIN USER API ###
