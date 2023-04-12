@@ -54,7 +54,8 @@ router.post("/", newUserValidation, async (req, res, next) => {
       sendVerificationMail({ fName: result.fName, url, email: result.email });
       return res.json({
         status: "success",
-        message: "User successfully added",
+        message:
+          "User successfully added, please check your email and verify your account to login",
       });
     }
 
@@ -107,19 +108,26 @@ router.post("/login", async (req, res, next) => {
     const { email, password } = req.body;
 
     const user = await getUserByFilter({ email });
-    console.log(user);
+
     if (user?._id) {
-      const verifyUser = verifyPassword(password, user.password);
-      if (verifyUser) {
-        return res.json({
-          status: "success",
-          message: "user logged in successfully",
-          user,
-        });
+      if (user?.status === "active") {
+        const verifyUser = verifyPassword(password, user.password);
+        if (verifyUser) {
+          return res.json({
+            status: "success",
+            message: "user logged in successfully",
+            user,
+          });
+        } else {
+          return res.json({
+            status: "error",
+            message: "password doesn't match, please try again",
+          });
+        }
       } else {
         return res.json({
           status: "error",
-          message: "password doesn't match, please try again",
+          message: "user email have not been verified, please check your email",
         });
       }
     }
